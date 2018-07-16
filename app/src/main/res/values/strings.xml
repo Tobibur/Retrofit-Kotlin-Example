@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SwipeQuotes</string>
+    <string name="loading_quote">Loading..</string>
+</resources>
