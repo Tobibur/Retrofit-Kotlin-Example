@@ -1,5 +1,6 @@
 package com.tobibur.swipequotes.network
 
+import com.tobibur.swipequotes.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -15,13 +16,15 @@ class ApiClient{
     private var logging = HttpLoggingInterceptor()
 
     private fun getHttpLogClient() : OkHttpClient{
-        logging.level = HttpLoggingInterceptor.Level.BODY
+        if (BuildConfig.DEBUG) {
+            logging.level = HttpLoggingInterceptor.Level.BODY
+        }
         return OkHttpClient.Builder()
                 .addInterceptor(logging)
                 .build()
     }
 
-    public fun getClient(): Retrofit? {
+    fun getClient(): Retrofit? {
         if (retrofit == null) {
             retrofit = Retrofit.Builder()
                     .baseUrl(baseURL)
