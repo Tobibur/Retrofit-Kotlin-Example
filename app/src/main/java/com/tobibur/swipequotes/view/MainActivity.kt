@@ -1,9 +1,13 @@
-package com.tobibur.swipequotes
+package com.tobibur.swipequotes.view
 
 import android.annotation.SuppressLint
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.tobibur.swipequotes.model.QuoteModel
+import com.tobibur.swipequotes.R
+import com.tobibur.swipequotes.network.ApiClient
+import com.tobibur.swipequotes.network.ApiInterface
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback

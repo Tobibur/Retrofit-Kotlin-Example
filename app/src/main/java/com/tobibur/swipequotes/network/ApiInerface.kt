@@ -1,5 +1,6 @@
-package com.tobibur.swipequotes
+package com.tobibur.swipequotes.network
 
+import com.tobibur.swipequotes.model.QuoteModel
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

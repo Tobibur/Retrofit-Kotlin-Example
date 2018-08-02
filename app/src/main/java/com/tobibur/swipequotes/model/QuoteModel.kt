@@ -1,4 +1,4 @@
-package com.tobibur.swipequotes
+package com.tobibur.swipequotes.model
 
 import com.google.gson.annotations.SerializedName
 
