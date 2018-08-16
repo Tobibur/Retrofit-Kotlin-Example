@@ -2,10 +2,10 @@ package com.tobibur.swipequotes.model
 
 import com.google.gson.annotations.SerializedName
 
-class QuoteModel{
+data class QuoteModel(
 
     @SerializedName("quoteText")
-    val quoteText: String? = null
+    val quoteText: String? = null,
 
     val quoteAuthor: String? = null
-}
+)

@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Retrofit-Kotlin-Example.iml" filepath="$PROJECT_DIR$/Retrofit-Kotlin-Example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Retrofit-Kotlin-Example.iml" filepath="$PROJECT_DIR$/Retrofit-Kotlin-Example.iml" />
       <module fileurl="file://$PROJECT_DIR$/SwipeQuotes.iml" filepath="$PROJECT_DIR$/SwipeQuotes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
