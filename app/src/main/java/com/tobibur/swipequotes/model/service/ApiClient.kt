@@ -13,8 +13,6 @@ class ApiClient{
     private val baseURL = "http://api.forismatic.com/"
     private var retrofit : Retrofit? = null
 
-    private val endpoints: ApiInterface? = null
-
     private var logging = HttpLoggingInterceptor()
 
     private fun getHttpLogClient() : OkHttpClient{

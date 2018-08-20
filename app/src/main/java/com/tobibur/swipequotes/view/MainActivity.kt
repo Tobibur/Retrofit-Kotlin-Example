@@ -22,38 +22,19 @@ class MainActivity : AppCompatActivity() {
         val viewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
         viewModel.getData().observe(this, Observer {
             if(it == null){
-                printLog("Handle Error")
+                logInfo("Handle Error")
             }
             if(it?.error == null){
                 val qoute : QuoteModel? = it!!.posts
                 quoteTextView.text = qoute?.quoteText + "\n\n-"+ qoute?.quoteAuthor
             }else{
                 val e : Throwable = it.error!!
-                printLog("Error is " + e.message)
+                logInfo("Error is " + e.message)
             }
         })
-
-
-//        val apiInstance = ApiClient()
-//
-//        val apiService = apiInstance.getClient()!!.create(ApiInterface::class.java)
-//        val call : Call<QuoteModel> = apiService.getQuotes("getQuote","json","en")
-//        call.enqueue(object : Callback<QuoteModel> {
-//            override fun onFailure(call: Call<QuoteModel>?, t: Throwable?) {
-//                printLog("Callback failed")
-//            }
-//
-//            @SuppressLint("SetTextI18n")
-//            override fun onResponse(call: Call<QuoteModel>?, response: Response<QuoteModel>?) {
-//                val qoute : QuoteModel? = response!!.body()
-//                quoteTextView.text = qoute!!.quoteText +"\n\n-"+ qoute.quoteAuthor
-//                printLog("Success")
-//            }
-//
-//        })
     }
 
-    fun printLog(msg: String){
-        Log.d("MainActivity", msg)
+    fun logInfo(msg: String){
+        Log.i("MainActivity", msg)
     }
 }
