@@ -1,4 +1,4 @@
-package com.tobibur.swipequotes.network
+package com.tobibur.swipequotes.model.service
 
 import com.tobibur.swipequotes.model.QuoteModel
 import retrofit2.Call
