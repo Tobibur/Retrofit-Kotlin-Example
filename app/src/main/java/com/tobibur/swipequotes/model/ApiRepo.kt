@@ -1,9 +1,9 @@
 package com.tobibur.swipequotes.model
 
 import android.arch.lifecycle.LiveData
-import com.tobibur.swipequotes.model.network.ApiClient
-import com.tobibur.swipequotes.model.network.ApiInterface
 import android.arch.lifecycle.MutableLiveData
+import com.tobibur.swipequotes.model.service.ApiClient
+import com.tobibur.swipequotes.model.service.ApiInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

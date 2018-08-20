@@ -7,15 +7,9 @@ import android.os.Bundle
 import android.util.Log
 import com.tobibur.swipequotes.model.QuoteModel
 import com.tobibur.swipequotes.R
-import com.tobibur.swipequotes.model.network.ApiClient
-import com.tobibur.swipequotes.model.network.ApiInterface
 import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import com.tobibur.swipequotes.viewmodel.MainActivityViewModel
 import android.arch.lifecycle.ViewModelProviders
-import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity() {
