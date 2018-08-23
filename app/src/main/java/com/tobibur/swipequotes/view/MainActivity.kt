@@ -14,13 +14,21 @@ import android.arch.lifecycle.ViewModelProviders
 
 class MainActivity : AppCompatActivity() {
 
-    @SuppressLint("SetTextI18n")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        getData(false)
+        fab.setOnClickListener{
+            getData(true)
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun getData(refresh : Boolean) {
         val viewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
-        viewModel.getQuoteData().observe(this, Observer {
+        viewModel.getQuoteData(refresh).observe(this, Observer {
             if(it == null){
                 logInfo("Handle Error")
             }
