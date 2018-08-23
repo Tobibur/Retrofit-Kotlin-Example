@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val viewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
-        viewModel.getData().observe(this, Observer {
+        viewModel.getQuoteData().observe(this, Observer {
             if(it == null){
                 logInfo("Handle Error")
             }
