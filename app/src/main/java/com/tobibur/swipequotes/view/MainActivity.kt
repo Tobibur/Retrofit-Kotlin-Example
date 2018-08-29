@@ -10,6 +10,7 @@ import com.tobibur.swipequotes.R
 import kotlinx.android.synthetic.main.activity_main.*
 import com.tobibur.swipequotes.viewmodel.MainActivityViewModel
 import android.arch.lifecycle.ViewModelProviders
+import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity() {
@@ -33,8 +34,17 @@ class MainActivity : AppCompatActivity() {
                 logInfo("Handle Error")
             }
             if(it?.error == null){
-                val qoute : QuoteModel? = it!!.posts
-                quoteTextView.text = qoute?.quoteText + "\n\n-"+ qoute?.quoteAuthor
+                if(it?.code==null) {
+                    val qoute: QuoteModel? = it!!.posts
+                    quoteTextView.text = qoute?.quoteText + "\n\n-" + qoute?.quoteAuthor
+                }else{
+                    when(it.code!!){
+                        404 -> toast("Sorry User not found! :(")
+                        else ->{
+                            toast("Error! Please try again..")
+                        }
+                    }
+                }
             }else{
                 val e : Throwable = it.error!!
                 logInfo("Error is " + e.message)
@@ -44,5 +54,9 @@ class MainActivity : AppCompatActivity() {
 
     fun logInfo(msg: String){
         Log.i("MainActivity", msg)
+    }
+
+    fun toast(msg: String){
+        Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
     }
 }

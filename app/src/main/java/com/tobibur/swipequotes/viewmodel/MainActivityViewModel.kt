@@ -12,8 +12,7 @@ class MainActivityViewModel : ViewModel(){
 
     fun getQuoteData(refresh: Boolean): LiveData<ApiResponse>{
         if(refresh){
-            quote = mApiRepo.getPosts()
-            return quote as LiveData<ApiResponse>
+            quote = null
         }
         if (this.quote == null) {
             quote = mApiRepo.getPosts()

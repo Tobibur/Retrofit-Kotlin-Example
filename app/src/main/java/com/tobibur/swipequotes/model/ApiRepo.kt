@@ -25,6 +25,8 @@ class ApiRepo{
             override fun onResponse(call: Call<QuoteModel>?, response: Response<QuoteModel>?) {
                 if (response!!.isSuccessful) {
                     apiResponse.postValue(ApiResponse(response.body()!!))
+                }else{
+                    apiResponse.postValue(ApiResponse(response.code()))
                 }
             }
 
