@@ -34,17 +34,8 @@ class MainActivity : AppCompatActivity() {
                 logInfo("Handle Error")
             }
             if(it?.error == null){
-                if(it?.code==null) {
-                    val qoute: QuoteModel? = it!!.posts
-                    quoteTextView.text = qoute?.quoteText + "\n\n-" + qoute?.quoteAuthor
-                }else{
-                    when(it.code!!){
-                        404 -> toast("Sorry User not found! :(")
-                        else ->{
-                            toast("Error! Please try again..")
-                        }
-                    }
-                }
+                val qoute: QuoteModel? = it!!.posts
+                quoteTextView.text = qoute?.quoteText + "\n\n-" + qoute?.quoteAuthor
             }else{
                 val e : Throwable = it.error!!
                 logInfo("Error is " + e.message)

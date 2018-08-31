@@ -16,26 +16,9 @@ import retrofit2.Response
 class ApiRepo{
 
     private var disposables: CompositeDisposable = CompositeDisposable()
-    //var endpoints : ApiClient = ApiClient()
     private val apiService = ApiClient().getClient()!!.create(ApiInterface::class.java)
     fun getPosts() : LiveData<ApiResponse> {
         val apiResponse = MutableLiveData<ApiResponse>()
-
-//        val call : Call<QuoteModel> = apiService.getQuotes("getQuote","json","en")
-//        call.enqueue(object : Callback<QuoteModel>{
-//            override fun onFailure(call: Call<QuoteModel>?, t: Throwable?) {
-//                apiResponse.postValue(ApiResponse(t!!))
-//            }
-//
-//            override fun onResponse(call: Call<QuoteModel>?, response: Response<QuoteModel>?) {
-//                if (response!!.isSuccessful) {
-//                    apiResponse.postValue(ApiResponse(response.body()!!))
-//                }else{
-//                    apiResponse.postValue(ApiResponse(response.code()))
-//                }
-//            }
-//
-//        })
 
         disposables.add(
         apiService.getQuotes("getQuote","json","en")
