@@ -43,4 +43,8 @@ dependencies {
     // ViewModel and LiveData
     implementation "android.arch.lifecycle:extensions:$lifecycle_version"
     implementation 'com.android.support:design:27.1.1'
+    // RxJava and RxAndroid
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
 }

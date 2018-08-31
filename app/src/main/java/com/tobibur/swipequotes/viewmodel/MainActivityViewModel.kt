@@ -20,4 +20,9 @@ class MainActivityViewModel : ViewModel(){
         }
         return quote as LiveData<ApiResponse>
     }
+
+    override fun onCleared() {
+        super.onCleared()
+        mApiRepo.clearDisposable()
+    }
 }
