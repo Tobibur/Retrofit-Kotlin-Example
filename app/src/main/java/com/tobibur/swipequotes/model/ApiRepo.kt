@@ -24,6 +24,7 @@ class ApiRepo{
         apiService.getQuotes("getQuote","json","en")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
+                .retry(2)
                 .subscribeWith(object : DisposableObserver<QuoteModel>(){
                     override fun onComplete() {
 
