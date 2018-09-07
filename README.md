@@ -14,6 +14,9 @@ Android Kotlin app to parse JSON data using [Retrofit2](https://github.com/squar
   * ` implementation 'com.google.code.gson:gson:2.8.5'`  
 * [ViewModel and LiveData](https://developer.android.com/topic/libraries/architecture/adding-components)
     * `implementation "android.arch.lifecycle:extensions:$lifecycle_version"`
+* [Calligraphy](https://github.com/InflationX/Calligraphy)
+    * `implementation 'io.github.inflationx:calligraphy3:3.0.0'`
+    * `implementation 'io.github.inflationx:viewpump:1.0.0'`
     
 ## API Used
 - [x] [Forismatic](http://forismatic.com/en/api/)
