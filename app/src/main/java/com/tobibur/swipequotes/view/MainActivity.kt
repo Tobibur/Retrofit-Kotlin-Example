@@ -10,7 +10,11 @@ import com.tobibur.swipequotes.R
 import kotlinx.android.synthetic.main.activity_main.*
 import com.tobibur.swipequotes.viewmodel.MainActivityViewModel
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Context
 import android.widget.Toast
+import io.github.inflationx.viewpump.ViewPumpContextWrapper
+
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -58,5 +62,9 @@ class MainActivity : AppCompatActivity() {
 
     fun toast(msg: String){
         Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase))
     }
 }
