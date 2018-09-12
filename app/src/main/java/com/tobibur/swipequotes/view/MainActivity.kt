@@ -32,15 +32,14 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun getData(refresh : Boolean) {
-        //val viewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
         viewModel.getQuoteData(refresh).observe(this, Observer {
             if(it == null){
                 logInfo("Handle Error")
             }
             if(it?.error == null){
                 if(it?.code==null) {
-                    val qoute: QuoteModel? = it!!.posts
-                    quoteTextView.text = qoute?.quoteText + "\n\n-" + qoute?.quoteAuthor
+                    val quote: QuoteModel? = it!!.posts
+                    quoteTextView.text = quote?.quoteText + "\n\n-" + quote?.quoteAuthor
                 }else{
                     when(it.code!!){
                         404 -> toast("Sorry User not found! :(")
