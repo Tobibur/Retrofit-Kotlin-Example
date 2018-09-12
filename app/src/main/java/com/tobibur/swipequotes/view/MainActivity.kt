@@ -9,7 +9,6 @@ import com.tobibur.swipequotes.model.QuoteModel
 import com.tobibur.swipequotes.R
 import kotlinx.android.synthetic.main.activity_main.*
 import com.tobibur.swipequotes.viewmodel.MainActivityViewModel
-import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.widget.Toast
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
@@ -19,7 +18,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class MainActivity : AppCompatActivity() {
 
     // Lazy Inject ViewModel
-    val viewModel: MainActivityViewModel by viewModel()
+    private val viewModel: MainActivityViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
