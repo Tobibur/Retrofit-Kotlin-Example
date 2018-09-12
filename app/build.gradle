@@ -48,4 +48,6 @@ dependencies {
     //Calligraphy
     implementation 'io.github.inflationx:calligraphy3:3.0.0'
     implementation 'io.github.inflationx:viewpump:1.0.0'
+    //Koin
+    implementation 'org.koin:koin-android-viewmodel:1.0.0-RC-1'
 }

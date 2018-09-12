@@ -13,12 +13,13 @@ import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.widget.Toast
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
-
-
+import org.koin.android.viewmodel.ext.android.viewModel
 
 
 class MainActivity : AppCompatActivity() {
 
+    // Lazy Inject ViewModel
+    val viewModel: MainActivityViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun getData(refresh : Boolean) {
-        val viewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
+        //val viewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
         viewModel.getQuoteData(refresh).observe(this, Observer {
             if(it == null){
                 logInfo("Handle Error")

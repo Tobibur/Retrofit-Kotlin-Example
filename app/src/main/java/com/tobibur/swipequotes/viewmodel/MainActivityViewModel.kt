@@ -5,10 +5,10 @@ import android.arch.lifecycle.ViewModel
 import com.tobibur.swipequotes.model.ApiRepo
 import com.tobibur.swipequotes.model.ApiResponse
 
-class MainActivityViewModel : ViewModel(){
+class MainActivityViewModel(val mApiRepo: ApiRepo) : ViewModel(){
 
     private var quote : LiveData<ApiResponse>? = null
-    private val mApiRepo: ApiRepo = ApiRepo()
+//    private val mApiRepo: ApiRepo = ApiRepo()
 
     fun getQuoteData(refresh: Boolean): LiveData<ApiResponse>{
         if(refresh){
