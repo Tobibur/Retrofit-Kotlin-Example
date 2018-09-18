@@ -30,7 +30,6 @@ class ApiClient{
     }
 
     fun getClient(): Retrofit? {
-        //if(okHttpClient == null) initOkHttp()
 
         if (retrofit == null) {
             retrofit = Retrofit.Builder()

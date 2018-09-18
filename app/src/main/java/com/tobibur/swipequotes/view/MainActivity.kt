@@ -4,12 +4,12 @@ import android.annotation.SuppressLint
 import android.arch.lifecycle.Observer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import com.tobibur.swipequotes.model.QuoteModel
 import com.tobibur.swipequotes.R
 import kotlinx.android.synthetic.main.activity_main.*
 import com.tobibur.swipequotes.viewmodel.MainActivityViewModel
 import android.content.Context
+import android.util.Log.i
 import android.widget.Toast
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                     quoteTextView.text = quote?.quoteText + "\n\n-" + quote?.quoteAuthor
                 }else{
                     when(it.code!!){
-                        404 -> toast("Sorry User not found! :(")
+                        404 -> toast("Sorry not found! :(")
                         else ->{
                             toast("Error! Please try again..")
                         }
@@ -55,11 +55,11 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun logInfo(msg: String){
-        Log.i("MainActivity", msg)
+    private fun logInfo(msg: String){
+        i("MainActivity", msg)
     }
 
-    fun toast(msg: String){
+    private fun toast(msg: String){
         Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
     }
 

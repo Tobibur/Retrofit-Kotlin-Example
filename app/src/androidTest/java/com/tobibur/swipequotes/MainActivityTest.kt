@@ -13,7 +13,7 @@ import org.junit.Test
 class MainActivityTest {
 
     @Rule @JvmField
-    val mActivityTestRule : ActivityTestRule<MainActivity> = ActivityTestRule<MainActivity>(MainActivity::class.java)
+    val mActivityTestRule = ActivityTestRule(MainActivity::class.java)
     private var mainActivity : MainActivity? = null
 
     @Before
