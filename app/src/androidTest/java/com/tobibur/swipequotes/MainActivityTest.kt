@@ -28,7 +28,7 @@ class MainActivityTest {
     @Test
     fun testLaunch() {
         val view = mainActivity?.findViewById<TextView>(R.id.quoteTextView)
-        assertNotNull(view)   //we will use this a lot
+        assertNotNull(view)
     }
 
     @After
